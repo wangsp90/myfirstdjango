@@ -15,3 +15,7 @@ def news_search(request):
 	keys=request.GET.get('keys')
 	newss="Your search news is %s" % keys
 	return HttpResponse(newss)
+
+def tpm(request):
+	context={"tpm":"This is DTL parameter test!","Lily":30,"wangsp":28}
+	return render(request,'DTL_pm.html',context=context)
