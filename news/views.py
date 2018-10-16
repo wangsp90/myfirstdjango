@@ -16,6 +16,17 @@ def news_search(request):
 	newss="Your search news is %s" % keys
 	return HttpResponse(newss)
 
-def tpm(request):
-	context={"tpm":"This is DTL parameter test!","Lily":30,"wangsp":28}
-	return render(request,'DTL_pm.html',context=context)
+def tpm_if(request):
+	context={"tpm":"This is DTL parameter test!","names":["wangsp","Jane"],"age":16}
+	return render(request,'DTL_if.html',context=context)
+
+def tpm_for(request):
+	context={
+	"books":[
+	{"name":"将夜","price":99},
+	{"name":"幽梦","price":78},
+	{"name":"黑切","price":109}
+	],
+	"students":{"01":70,"02":32,"03":98}
+	}
+	return render(request, 'DTL_for.html', context=context)

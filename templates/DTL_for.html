@@ -1,0 +1,47 @@
+<!First Template>
+<html lan="en">
+<head>
+	<meda charset="UTF-8">
+	<title>Title</title>
+</head>
+
+<body>
+	<ul>
+		{%for book in books %}
+			<li>{{book}}</li>
+		{%endfor%}
+	</ul>
+
+	<ul>遍历一个dict
+		{%for key,value in students.items %}
+			<li>{{key}}/{{value}}</li>
+		{%endfor%}
+	</ul>
+	
+	<table>
+		<thead>
+			<tr>
+				<td>序号</td>
+				<td>书名</td>
+				<td>价格</td>
+			</tr>
+		</thead>
+		<tbody>
+				{%for book in books %}
+				    {%if forloop.first%}
+						<tr style="background: green">
+					{%elif forloop.last%}
+						<tr style="background: pink">
+					{%else%}
+						<tr>
+					{%endif%}
+						<td>{{forloop.counter}}</td>		<!forloop.counter用于计算遍历的次数>
+						<td>{{book.name}}</td>
+						<td>{{book.price}}</td>
+					</tr>
+				{%endfor%}
+		</tbody>
+	</table>
+
+</body>
+</html>

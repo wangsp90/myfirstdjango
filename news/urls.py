@@ -6,5 +6,6 @@ urlpatterns = [
     path('list/', views.news_list, name='newslist'),
     path('id/<newsid>/', views.news_id),
     path('search/', views.news_search),
-    path('tpm/', views.tpm)
+    path('tpmif/', views.tpm_if),
+    path('tpmfor/', views.tpm_for)
 ]

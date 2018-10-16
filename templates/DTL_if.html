@@ -1,0 +1,19 @@
+<!First Template>
+<html lan="en">
+<head>
+	<meda charset="UTF-8">
+	<title>Title</title>
+</head>
+
+<body>
+
+	{{ names.0 }}			#无论是dict还是list，都是通过.去获取参数
+	<p>{{ tpm }}</p>
+	{%if age < 18 %}
+		<p> Get out!!! </p>
+	{%else %}
+		<p> Welcome!!! </p>
+	{%endif%}
+
+</body>
+</html>
