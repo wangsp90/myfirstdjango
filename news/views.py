@@ -7,19 +7,21 @@ from django.http import HttpResponse
 def news_list(request):
 	return HttpResponse("新闻列表")
 
-def news_id(request,newsid):
+def news_id(request,newsid):			#通过url中指定某段直接传递newsid
 	nid="Your news id is %s" % newsid
 	return HttpResponse(nid)
 
-def news_search(request):
+def news_search(request):				#通过?keys=xxx来传递keys
 	keys=request.GET.get('keys')
 	newss="Your search news is %s" % keys
 	return HttpResponse(newss)
 
+#DTL test if
 def tpm_if(request):
 	context={"tpm":"This is DTL parameter test!","names":["wangsp","Jane"],"age":16}
 	return render(request,'DTL_if.html',context=context)
 
+#DTL test for
 def tpm_for(request):
 	context={
 	"books":[
@@ -30,3 +32,7 @@ def tpm_for(request):
 	"students":{"01":70,"02":32,"03":98}
 	}
 	return render(request, 'DTL_for.html', context=context)
+
+#DTL test url parameter
+def dtlurl(request):
+	return render(request, 'DTL_url.html')

@@ -1,0 +1,16 @@
+<!First Template>
+<html lan="en">
+<head>
+	<meda charset="UTF-8">
+	<title>Title</title>
+
+</head>
+
+<body>
+	<ul>
+		<li><a href="{% url 'news:newslist' %}">正常测试</a></li>
+		<li><a href="{% url 'news:newsid' newsid='XXX' %}">指定参数</a></li>
+		<li><a href="{% url 'news:search' %}?keys=XXX">非指定参数</a></li>
+	</ul>
+</body>
+</html>
