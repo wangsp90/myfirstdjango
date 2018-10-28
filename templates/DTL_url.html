@@ -13,5 +13,9 @@
 		<li><a href="{% url 'news:cut' %}">cut测试</a></li>
 		<li><a href="{% url 'news:date' %}">DTL中date过滤器测试</a></li>
 	</ul>
+	<!--第一种加载静态文件的方法,通过url调用-->
+	<img src="/static/news/first.jpg">
+	<!--第二种加载静态文件的方法,通过url调用-->
+	<img src="{% static 'news/sec.jpg' %}">
 </body>
 {% endblock %}

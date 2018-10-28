@@ -65,6 +65,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            #添加一个标签成为内置标签
+            'builtins':['django.templatetags.static']
         },
     },
 ]
@@ -118,5 +120,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
+#请求静态文件的时候使用的URL
+#eg:127.0.0.1:8000/static/xxx.jpg
 STATIC_URL = '/static/'
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
