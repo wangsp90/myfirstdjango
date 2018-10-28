@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from datetime import datetime
 
 from django.http import HttpResponse
 
@@ -16,7 +17,7 @@ def news_search(request):				#通过?keys=xxx来传递keys
 	newss="Your search news is %s" % keys
 	return HttpResponse(newss)
 
-#DTL test if
+#DTL test if 同时进行Django参数传递测试
 def tpm_if(request):
 	context={"tpm":"This is DTL parameter test!","names":["wangsp","Jane"],"age":16}
 	return render(request,'DTL_if.html',context=context)
@@ -36,3 +37,22 @@ def tpm_for(request):
 #DTL test url parameter
 def dtlurl(request):
 	return render(request, 'DTL_url.html')
+
+#add过滤器拼接测试
+def add_view(request):
+	context={
+	"value1":["1",2,"3m"],
+	"value2":["A","b","ZY"]
+	}
+	return render(request, 'testadd.html',context=context)
+
+#cut过滤器删除测试
+def cut_view(request):
+	return render(request, 'testcut.html')
+
+#date过滤器删除测试
+def date_view(request):
+	context={
+		'now':datetime.now()
+	}
+	return render(request, 'date.html',context=context)

@@ -1,16 +1,17 @@
-<!First Template>
-<html lan="en">
-<head>
-	<meda charset="UTF-8">
-	<title>Title</title>
+{% extends 'base.html' %}
 
-</head>
+{% block test1 %}
 
 <body>
 	<ul>
-		<li><a href="{% url 'news:newslist' %}">正常测试</a></li>
-		<li><a href="{% url 'news:newsid' newsid='XXX' %}">指定参数</a></li>
-		<li><a href="{% url 'news:search' %}?keys=XXX">非指定参数</a></li>
+		<li><a href="{% url 'news:newslist' %}">正常测试-新闻列表</a></li>
+		<li><a href="{% url 'news:newsid' newsid='XXX' %}">url中指定参数-新闻ID</a></li>
+		<li><a href="{% url 'news:search' %}?keys=XXX">url非指定参数-搜索新闻</a></li>
+		<li><a href="{% url 'news:tpmif' %}">DTL中if测试</a></li>
+		<li><a href="{% url 'news:tpmfor' %}">DTL中for测试</a></li>
+		<li><a href="{% url 'news:addview' %}">add拼接测试</a></li>
+		<li><a href="{% url 'news:cut' %}">cut测试</a></li>
+		<li><a href="{% url 'news:date' %}">DTL中date过滤器测试</a></li>
 	</ul>
 </body>
-</html>
+{% endblock %}
